@@ -4,30 +4,30 @@ import java.util.ArrayList;
 
 public class Parking {
 
-    private final ArrayList<Command> vehicles;
+    private final ArrayList<VehicleCommand> vehicles;
 
     public Parking() {
         this.vehicles = new ArrayList<>();
     }
 
-    public void addVehicle(Command vehicleAdd) {
+    public void addVehicle(VehicleCommand vehicleAdd) {
         this.vehicles.add(vehicleAdd);
     }
 
     public void startAllVehicles() {
-        for (Command vehicleStart : this.vehicles){
+        for (VehicleCommand vehicleStart : this.vehicles){
             vehicleStart.start();
         }
     }
 
     public void accelerateAllVehicles() {
-        for (Command vehicleStart : this.vehicles){
+        for (VehicleCommand vehicleStart : this.vehicles){
             vehicleStart.accelerate();
         }
     }
 
     public void brakeAllVehicles() {
-        for (Command vehicleStart : this.vehicles){
+        for (VehicleCommand vehicleStart : this.vehicles){
             vehicleStart.brake();
         }
     }

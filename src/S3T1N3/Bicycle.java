@@ -1,6 +1,6 @@
 package S3T1N3;
 
-public class Bicycle extends Command {
+public class Bicycle implements VehicleCommand {
     //Atributos
     String name;
 

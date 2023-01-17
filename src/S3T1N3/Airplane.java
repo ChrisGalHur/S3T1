@@ -1,6 +1,6 @@
 package S3T1N3;
 
-public class Airplane extends Command{
+public class Airplane implements VehicleCommand {
     //Atributos
     String name;
 

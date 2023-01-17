@@ -1,6 +1,6 @@
 package S3T1N3;
 
-public class Car extends Command{
+public class Car implements VehicleCommand {
     //Atributos
     String name;
 
@@ -19,7 +19,7 @@ public class Car extends Command{
         this.name = name;
     }
 
-    //Métodos de la clase Command
+    //Métodos de la clase VehicleCommand
     @Override
     public void start() {
         System.out.println("Car " + this.name + " is starting.");
