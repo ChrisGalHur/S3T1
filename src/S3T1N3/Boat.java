@@ -1,37 +1,22 @@
 package S3T1N3;
 
-public class Boat implements VehicleCommand {
-    //Atributos
-    String name;
-
-    //Constructores
+public class Boat extends Vehicle implements VehicleCommands {
     public Boat(String name) {
-        this.name = name;
+        super(name);
     }
 
-    //Getters
-    public String getName() {
-        return name;
-    }
-
-    //Setters
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    //Métodos de la clase VehicleCommand
     @Override
     public void start() {
-        System.out.println("Boat " + this.name + " is starting.");
+        System.out.println(super.getName() + " is starting.");
     }
 
     @Override
     public void accelerate() {
-        System.out.println("Boat " + this.name + " is accelerating.");
+        System.out.println(super.getName() + " is accelerating.");
     }
 
     @Override
     public void brake() {
-        System.out.println("Boat " + this.name + " has braked.");
+        System.out.println(super.getName() + " is breaking.");
     }
 }

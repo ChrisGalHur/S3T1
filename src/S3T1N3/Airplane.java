@@ -1,36 +1,22 @@
 package S3T1N3;
 
-public class Airplane implements VehicleCommand {
-    //Atributos
-    String name;
-
-    //Constructores
+public class Airplane extends Vehicle implements VehicleCommands {
     public Airplane(String name) {
-        this.name = name;
-    }
-
-    //Getters
-    public String getName() {
-        return name;
-    }
-
-    //Setters
-    public void setName(String name) {
-        this.name = name;
+        super(name);
     }
 
     @Override
     public void start() {
-        System.out.println("Airplane " + this.name + " is starting.");
+        System.out.println(super.getName() + " is starting.");
     }
 
     @Override
     public void accelerate() {
-        System.out.println("Airplane " + this.name + " is accelerating.");
+        System.out.println(super.getName() + " is accelerating.");
     }
 
     @Override
     public void brake() {
-        System.out.println("Airplane " + this.name + " has braked.");
+        System.out.println(super.getName() + " is breaking.");
     }
 }

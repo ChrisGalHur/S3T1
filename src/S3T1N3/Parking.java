@@ -3,32 +3,43 @@ package S3T1N3;
 import java.util.ArrayList;
 
 public class Parking {
+    //Comandos para el parquing
+    private StartCommand parkingStart;
+    private AccelerateCommand parkingAccelerate;
+    private BrakeCommand parkingBrake;
 
-    private final ArrayList<VehicleCommand> vehicles;
+    //ArrayLists de comandos
+    private final ArrayList<StartCommand> startCommands;
+    private final ArrayList<AccelerateCommand> accelerateCommands ;
+    private final ArrayList<BrakeCommand> brakeCommands ;
 
     public Parking() {
-        this.vehicles = new ArrayList<>();
+        this.startCommands = new ArrayList<>();
+        this.accelerateCommands = new ArrayList<>();
+        this.brakeCommands = new ArrayList<>();
     }
 
-    public void addVehicle(VehicleCommand vehicleAdd) {
-        this.vehicles.add(vehicleAdd);
+    public void addCommands(StartCommand parkingStart, AccelerateCommand parkingAccelerate, BrakeCommand parkingBrake){
+        startCommands.add(parkingStart);
+        accelerateCommands.add(parkingAccelerate);
+        brakeCommands.add(parkingBrake);
     }
 
-    public void startAllVehicles() {
-        for (VehicleCommand vehicleStart : this.vehicles){
-            vehicleStart.start();
+    public void startAll(){
+        for (StartCommand start : startCommands) {
+            start.execute();
         }
     }
 
-    public void accelerateAllVehicles() {
-        for (VehicleCommand vehicleStart : this.vehicles){
-            vehicleStart.accelerate();
+    public void accelerateAll(){
+        for (AccelerateCommand accelerate : accelerateCommands) {
+            accelerate.execute();
         }
     }
 
-    public void brakeAllVehicles() {
-        for (VehicleCommand vehicleStart : this.vehicles){
-            vehicleStart.brake();
+    public void brakeAll() {
+        for (BrakeCommand brake : brakeCommands) {
+            brake.execute();
         }
     }
 }
